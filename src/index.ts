@@ -9,7 +9,6 @@ import { World } from '@iwsdk/core';
 import { SparkRenderer, SplatMesh } from '@sparkjsdev/spark';
 import projectOptions from 'virtual:iwsdk-project';
 import { PanelSystem } from './panel.js';
-import { RobotSystem } from './robot.js';
 
 const assetUrl = (filePath: string): string =>
   `${import.meta.env.BASE_URL}${filePath.replace(/^\/+/, '')}`;
@@ -33,7 +32,6 @@ async function start(): Promise<void> {
   marbleWorld.scale.setScalar(1);
   world.createTransformEntity(marbleWorld);
 
-  world.registerSystem(RobotSystem);
   world.registerSystem(PanelSystem);
 }
 
